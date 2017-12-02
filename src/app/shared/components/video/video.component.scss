@@ -65,11 +65,11 @@
       margin-left: 20px;
       border-style: solid;
       border-width: 30px 0 30px 50px;
-      border-color: transparent transparent transparent $gi-charocal;
+      border-color: transparent transparent transparent $gi-charcoal;
       line-height: 0px;
 
       // IE Support ( add chroma filter )
-      _border-color: #000000 #000000 #000000 $gi-charocal;
+      _border-color: #000000 #000000 #000000 $gi-charcoal;
       _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
 
       // Better anti-aliasing in webkit browsers
@@ -110,10 +110,10 @@
 
     top: 0;
     left: 0;
-    border-color: $gi-charocal transparent transparent transparent;
+    border-color: $gi-charcoal transparent transparent transparent;
 
     // IE Support ( add chroma filter )
-    _border-color: $gi-charocal #000000 #000000 #000000;
+    _border-color: $gi-charcoal #000000 #000000 #000000;
   }
 
   &::after {

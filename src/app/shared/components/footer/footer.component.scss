@@ -1,0 +1,127 @@
+@import "../../../style/palette";
+
+footer.footer {
+
+  border-top: 15px solid $gi-gold;
+  background: $gi-graphite;
+  color: $gi-asphalt;
+
+  .container {
+
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 50px 0;
+    width: 1200px;
+    max-width: 90%;
+
+    .left {
+
+      display: flex;
+      flex-direction: column;
+
+      .links {
+
+        display: flex;
+        margin-bottom: 40px;
+
+        .link-group {
+
+          margin-right: 40px;
+
+          &:last-child {
+
+            margin-right: 0;
+          }
+
+          h1 {
+
+            font-size: 20px;
+            color: $gi-gold;
+            font-weight: 300;
+            margin-bottom: 20px;
+          }
+
+          ul {
+
+            list-style: none;
+
+            li {
+
+              margin-bottom: 10px;
+
+              &:last-child {
+
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .subscribe {
+
+        p {
+
+          max-width: 250px;
+        }
+
+        form {
+
+          margin-top: 40px;
+
+          input[type=email] {
+
+            border: none;
+            background: $gi-gray;
+            padding: 15px;
+            font-size: 16px;
+            color: $gi-black;
+            width: 250px;
+
+            transition: background .2s ease-in-out, width .3s ease-in-out;
+
+            &:hover {
+
+              background: $gi-asphalt;
+            }
+
+            &:focus {
+
+              background: $gi-asphalt;
+              width: 400px;
+            }
+          }
+
+          button {
+
+            border: none;
+            outline: none;
+            background: $gi-gold;
+            color: #fff;
+            border-radius: 0;
+            font-size: 16px;
+            padding: 15px;
+            margin-left: -4px;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+
+    background: $gi-black;
+
+    .container {
+
+      display: flex;
+      justify-content: space-between;
+      color: $gi-gray;
+      padding: 10px 0;
+      margin: auto;
+      width: 1200px;
+      max-width: 90%;
+    }
+  }
+}
