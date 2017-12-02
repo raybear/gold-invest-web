@@ -43,4 +43,14 @@ export class SliderComponent implements AfterViewInit {
         this.subTitle.nativeElement.innerText = slide.getSubTitle();
         this.description.nativeElement.innerText = slide.getDescription();
     }
+
+    nextSlide(): void {
+
+
+    }
+
+    prevSlide(): void {
+
+
+    }
 }
