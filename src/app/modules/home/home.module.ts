@@ -7,6 +7,7 @@ import {SliderModule} from '../../shared/components/slider/slider.module';
 import {RibbonModule} from '../../shared/components/ribbon/ribbon.module';
 import {SplitViewModule} from '../../shared/components/split-view/split-view.module';
 import {VideoModule} from '../../shared/components/video/video.module';
+import {WrapperModule} from '../../shared/components/wrapper/wrapper.module';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import {VideoModule} from '../../shared/components/video/video.module';
         SliderModule,
         RibbonModule,
         SplitViewModule,
-        VideoModule
+        VideoModule,
+        WrapperModule
     ],
     declarations: [
         HomeComponent

@@ -1,0 +1,11 @@
+@import "../../../style/palette";
+
+.wrapper-container {
+
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 1200px;
+  max-width: 90%;
+  padding: 40px;
+}
