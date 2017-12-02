@@ -1,4 +1,4 @@
-<div class="header-slider">
+<div class="header-slider" [ngStyle]="{'background-image': 'url(/assets/img/' + background + ')'}">
     <div class="content">
         <div class="navigation prev" (click)="prevSlide()"></div>
         <div class="navigation next" (click)="nextSlide()"></div>

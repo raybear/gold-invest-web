@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 
 @Component({
     moduleId: module.id,
@@ -12,6 +12,8 @@ export class SliderItemComponent {
     @ViewChild('subTitle') subTitle: ElementRef;
 
     @ViewChild('description') description: ElementRef;
+
+    @Input('background') background = 'nature_mount_rainier.jpg';
 
     getTitle(): string {
 

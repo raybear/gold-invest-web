@@ -1,4 +1,7 @@
-import {AfterViewInit, Component, ContentChildren, ElementRef, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {
+    AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, ElementRef, OnInit, QueryList, ViewChild,
+    ViewChildren
+} from '@angular/core';
 
 import {SliderItemComponent} from './slider-item.component';
 
@@ -6,13 +9,16 @@ import {SliderItemComponent} from './slider-item.component';
     moduleId: module.id,
     selector: 'app-slider',
     templateUrl: './slider.component.html',
-    styleUrls: ['./slider.component.scss']
+    styleUrls: ['./slider.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SliderComponent implements AfterViewInit {
 
     slides: SliderItemComponent[] = [];
 
     activeSlide = 0;
+
+    background: string;
 
     @ContentChildren(SliderItemComponent) slidesQuery: QueryList<SliderItemComponent>;
 
@@ -21,6 +27,8 @@ export class SliderComponent implements AfterViewInit {
     @ViewChild('subTitle') subTitle: ElementRef;
 
     @ViewChild('description') description: ElementRef;
+
+    constructor(private changeDetector: ChangeDetectorRef) {}
 
     ngAfterViewInit() {
 
@@ -42,6 +50,10 @@ export class SliderComponent implements AfterViewInit {
         this.title.nativeElement.innerText = slide.getTitle();
         this.subTitle.nativeElement.innerText = slide.getSubTitle();
         this.description.nativeElement.innerText = slide.getDescription();
+
+        this.background = slide.background;
+
+        this._detectChanges();
     }
 
     nextSlide(): void {
@@ -65,5 +77,10 @@ export class SliderComponent implements AfterViewInit {
         }
 
         this.setSlide();
+    }
+
+    private _detectChanges(): void {
+
+        this.changeDetector.detectChanges();
     }
 }
