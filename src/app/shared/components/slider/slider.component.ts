@@ -31,8 +31,8 @@ export class SliderComponent implements AfterViewInit {
 
         this.setSlide();
 
-        console.log(this.slidesQuery);
-        console.log(this.slides);
+        // console.log(this.slidesQuery);
+        // console.log(this.slides);
     }
 
     setSlide(): void {
@@ -46,11 +46,24 @@ export class SliderComponent implements AfterViewInit {
 
     nextSlide(): void {
 
+        if (this.activeSlide === this.slidesQuery.length - 1) {
+            this.activeSlide = 0;
+        } else {
+            this.activeSlide++;
+        }
+
+        this.setSlide();
 
     }
 
     prevSlide(): void {
 
+        if (this.activeSlide === 0) {
+            this.activeSlide = this.slidesQuery.length - 1;
+        } else {
+            this.activeSlide--;
+        }
 
+        this.setSlide();
     }
 }
