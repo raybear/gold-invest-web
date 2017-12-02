@@ -90,6 +90,11 @@ section.site {
             height: 5px;
             margin: 0 5px;
             background: #fff;
+
+            &.active {
+
+              background: $gi-gold;
+            }
           }
         }
 
@@ -99,6 +104,197 @@ section.site {
           text-align: center;
         }
       }
+    }
+  }
+
+  .ribbon {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+
+    &-gold {
+
+      background: $gi-gold;
+    }
+
+    &-dark {
+
+      background: $gi-charocal;
+      color: #fff;
+    }
+  }
+
+  .split {
+
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+
+    .view {
+
+      display: flex;
+
+      flex-direction: column;
+      padding: 50px;
+      text-align: center;
+
+      h1, h2 {
+
+        font-size: 18px;
+      }
+
+      h1 {
+
+        font-weight: 400;
+      }
+
+      h2 {
+
+        font-weight: 100;
+      }
+
+      p {
+
+        font-weight: 300;
+        margin: 30px 0;
+      }
+
+      &-dark {
+
+        background: $gi-charocal;
+        color: #fff;
+      }
+    }
+  }
+
+  .video {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+    height: 450px;
+    position: relative;
+    background: url('/assets/img/leonardo-4.jpg');
+    background-position: center;
+    background-size: cover;
+
+    .overlay {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(#000, 0);
+
+      transition: background .2s;
+    }
+
+    .play {
+
+      display: flex;
+      align-self: center;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(#fff, .5);
+      border: 10px solid rgba($gi-gold, .5);
+      cursor: pointer;
+      z-index: 10;
+      text-align: center;
+      justify-content: center;
+
+      transition: background .2s ease-in-out, border .5s ease-in-out;
+
+      &:hover {
+
+        background: rgba(#fff, .75);
+        border: 20px solid rgba($gi-gold, 1);
+
+        &::before {
+
+          transform: scale(1.2);
+        }
+      }
+
+      &::before {
+
+        content: "";
+        display: flex;
+        align-self: center;
+        justify-self: center;
+
+        width: 0;
+        height: 0;
+        margin-left: 20px;
+        border-style: solid;
+        border-width: 30px 0 30px 50px;
+        border-color: transparent transparent transparent $gi-charocal;
+        line-height: 0px;
+
+        // IE Support ( add chroma filter )
+        _border-color: #000000 #000000 #000000 $gi-charocal;
+        _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+
+        // Better anti-aliasing in webkit browsers
+        transform: rotate(360deg);
+
+        transition: all .3s ease-in-out;
+      }
+    }
+
+    &:hover {
+
+      .overlay {
+        background: rgba(#000, .5);
+      }
+    }
+
+    &::before,
+    &::after {
+
+      position: absolute;
+      display: block;
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 600px 0 0;
+      line-height: 0px;
+      z-index: 10;
+
+      // IE Support ( add chroma filter )
+      _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+
+      // Better anti-aliasing in webkit browsers
+      transform: rotate(360deg);
+    }
+
+    &::before {
+
+      top: 0;
+      left: 0;
+      border-color: $gi-charocal transparent transparent transparent;
+
+      // IE Support ( add chroma filter )
+      _border-color: $gi-charocal #000000 #000000 #000000;
+    }
+
+    &::after {
+
+      bottom: 0;
+      right: 0;
+      border-color: transparent $gi-gold transparent transparent;
+
+      // IE Support ( add chroma filter )
+      _border-color: #000000 $gi-gold #000000 #000000;
     }
   }
 }

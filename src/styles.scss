@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500');
 @import 'app/style/_palette.scss';
+
 * {
 
   margin: 0;
   padding: 0;
   outline: none;
+  box-sizing: border-box;
 }
 
 html, body {
 
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 .btn {
@@ -18,6 +21,8 @@ html, body {
   padding: 15px 30px;
   cursor: pointer;
   box-shadow: 0 0 0 transparent;
+  align-content: center;
+  justify-content: center;
 
   transition: all .2s;
 
@@ -36,4 +41,30 @@ html, body {
       color: #fff;
     }
   }
+
+  &-dark {
+
+    background: $gi-charocal;
+    color: #fff;
+  }
+}
+
+.center {
+
+  text-align: center;
+}
+
+.mb-20 {
+
+  margin-bottom: 20px;
+}
+
+.mb-30 {
+
+  margin-bottom: 30px;
+}
+
+.mb-40 {
+
+  margin-bottom: 40px;
 }
