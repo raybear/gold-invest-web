@@ -6,6 +6,7 @@
   flex-grow: 1;
   position: relative;
   margin: 0 20px;
+  cursor: default;
 }
 
 .block-list-item {
@@ -25,7 +26,7 @@
 
     .img {
 
-      border: 15px solid #fff;
+      border: 15px solid $gi-gold;
     }
   }
 
@@ -53,13 +54,20 @@
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    background: red;
     border: 10px solid #fff;
     box-shadow: 0 5px 10px rgba(#000, .25);
     z-index: 10;
     margin-top: -40px;
+    position: relative;
+    overflow: hidden;
 
-    transition: border .2s ease-in-out;
+    transition: border .1s ease-in;
+
+    img {
+
+      width: 100%;
+      height: auto;
+    }
   }
 
   .details {
