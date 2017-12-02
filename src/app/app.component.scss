@@ -9,25 +9,6 @@ section.site {
     height: 50px;
   }
 
-  .ribbon {
-
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: 20px;
-
-    &-gold {
-
-      background: $gi-gold;
-    }
-
-    &-dark {
-
-      background: $gi-charocal;
-      color: #fff;
-    }
-  }
-
   .split {
 
     display: flex;
