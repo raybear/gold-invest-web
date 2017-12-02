@@ -1,0 +1,75 @@
+@import "../../../style/palette";
+
+.faq {
+
+  background: $gi-charocal;
+  padding: 40px;
+  color: #fff;
+
+  h1 {
+
+    font-size: 23px;
+    color: $gi-gold;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .content {
+
+    display: flex;
+    margin: auto;
+    width: 1200px;
+    max-width: 90%;
+    justify-content: space-between;
+
+    .list {
+
+      min-width: 400px;
+      list-style: none;
+      margin-right: 50px;
+
+      li {
+
+        background: rgba($gi-gold, .2);
+        padding: 20px 40px 20px 20px;
+        cursor: pointer;
+
+        transition: background .2s;
+
+        &:nth-child(odd) {
+
+          background: rgba($gi-gold, .1);
+        }
+
+        &.active {
+
+          background: $gi-gold;
+          position: relative;
+
+          &:after {
+
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 41px 0 41px 30px;
+            border-color: transparent transparent transparent $gi-gold;
+            line-height: 0;
+
+            _border-color: #000000 #000000 #000000 $gi-gold;
+            _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+          }
+        }
+
+        &:hover {
+
+          background: $gi-gold;
+        }
+      }
+    }
+  }
+}
