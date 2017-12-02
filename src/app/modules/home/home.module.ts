@@ -10,6 +10,7 @@ import {VideoModule} from '../../shared/components/video/video.module';
 import {WrapperModule} from '../../shared/components/wrapper/wrapper.module';
 import {BlockListModule} from '../../shared/components/block-list/block-list.module';
 import {FaqModule} from '../../shared/components/faq/faq.module';
+import {MapModule} from '../../shared/components/map/map.module';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import {FaqModule} from '../../shared/components/faq/faq.module';
         VideoModule,
         WrapperModule,
         BlockListModule,
-        FaqModule
+        FaqModule,
+        MapModule
     ],
     declarations: [
         HomeComponent
