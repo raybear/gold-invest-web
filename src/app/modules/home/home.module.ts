@@ -8,6 +8,7 @@ import {RibbonModule} from '../../shared/components/ribbon/ribbon.module';
 import {SplitViewModule} from '../../shared/components/split-view/split-view.module';
 import {VideoModule} from '../../shared/components/video/video.module';
 import {WrapperModule} from '../../shared/components/wrapper/wrapper.module';
+import {BlockListModule} from '../../shared/components/block-list/block-list.module';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import {WrapperModule} from '../../shared/components/wrapper/wrapper.module';
         RibbonModule,
         SplitViewModule,
         VideoModule,
-        WrapperModule
+        WrapperModule,
+        BlockListModule
     ],
     declarations: [
         HomeComponent
