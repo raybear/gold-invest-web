@@ -20,6 +20,10 @@ export class SliderComponent implements AfterViewInit {
 
     background: string;
 
+    loaded = false;
+
+    switching = false;
+
     @ContentChildren(SliderItemComponent) slidesQuery: QueryList<SliderItemComponent>;
 
     @ViewChild('title') title: ElementRef;
@@ -38,9 +42,6 @@ export class SliderComponent implements AfterViewInit {
         });
 
         this.setSlide();
-
-        // console.log(this.slidesQuery);
-        // console.log(this.slides);
     }
 
     setSlide(): void {
@@ -64,8 +65,7 @@ export class SliderComponent implements AfterViewInit {
             this.activeSlide++;
         }
 
-        this.setSlide();
-
+        this._switchSlide();
     }
 
     prevSlide(): void {
@@ -76,7 +76,17 @@ export class SliderComponent implements AfterViewInit {
             this.activeSlide--;
         }
 
-        this.setSlide();
+        this._switchSlide();
+    }
+
+    private _switchSlide() {
+        this.switching = true;
+
+        setTimeout(() => {
+
+            this.switching = false;
+            this.setSlide();
+        }, 500);
     }
 
     private _detectChanges(): void {
