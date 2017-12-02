@@ -29,6 +29,17 @@
       background: rgba($gi-gray, .5);
       color: #fff;
 
+      ::ng-deep {
+
+        // Quick fix for parsing innerText
+        // This should be handled better in JS parsing script
+
+        br {
+
+          display: none;
+        }
+      }
+
       h1, h2 {
 
         font-size: 26px;

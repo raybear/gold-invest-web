@@ -1,17 +1,20 @@
 <div class="header-slider">
     <div class="content">
         <div class="wrapper">
-            <h1>KLJUC U VASIM RUKAMA</h1>
-            <h2>SIGURNOST U NASIM</h2>
 
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Turpis tincidunt id aliquet risus feugiat in ante.
-                Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus.
-                Turpis tincidunt id aliquet risus feugiat in ante metus. Pulvinar elementum integer enim  neque volutpat ac tincidunt vitae.
-            </p>
+            <ng-container *ngIf="!slidesQuery.length">
+                <h1>Greska prilikom ucitavanja slidera</h1>
+                <h2>Proverite da li slider ima dovoljno elemenata</h2>
+            </ng-container>
 
-            <a class="btn btn-gold">PRODAJA APARTMANA</a>
+            <ng-container *ngIf="slidesQuery.length">
+                <h1 #title></h1>
+                <h2 #subTitle></h2>
+
+                <p #description></p>
+
+                <a class="btn btn-gold">PRODAJA APARTMANA</a>
+            </ng-container>
         </div>
     </div>
     <div class="info">
@@ -19,9 +22,7 @@
         <div class="wrapper">
 
             <div class="pager">
-                <div></div>
-                <div class="active"></div>
-                <div></div>
+                <div *ngFor="let slide of slides; let index = index" [class.active]="index == activeSlide"></div>
             </div>
 
             <p>
